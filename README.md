@@ -1,4 +1,3 @@
-[![Build Status repo][repo-build]][repo-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -203,16 +202,14 @@ Project Link:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[repo-build]: https://jenkins.odex.be/buildStatus/icon?job=tos-repo&style=flat-square&subject=tde-build
-[repo-url]: https://jenkins.odex.be/job/tos-repo/
-[contributors-shield]: https://img.shields.io/github/contributors/ODEX-TOS/tos-desktop-environment.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/ODEX-TOS/repo-sync.svg?style=flat-square
 [contributors-url]: https://github.com/ODEX-TOS/repo-sync/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ODEX-TOS/tos-desktop-environment.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/ODEX-TOS/repo-sync.svg?style=flat-square
 [forks-url]: https://github.com/ODEX-TOS/repo-sync/network/members
-[stars-shield]: https://img.shields.io/github/stars/ODEX-TOS/tos-desktop-environment.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/ODEX-TOS/repo-sync.svg?style=flat-square
 [stars-url]: https://github.com/ODEX-TOS/repo-sync/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ODEX-TOS/tos-desktop-environment.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/ODEX-TOS/repo-sync.svg?style=flat-square
 [issues-url]: https://github.com/ODEX-TOS/repo-sync/issues
-[license-shield]: https://img.shields.io/github/license/ODEX-TOS/tos-desktop-environment.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/ODEX-TOS/repo-sync.svg?style=flat-square
 [license-url]: https://github.com/ODEX-TOS/repo-sync/blob/release/LICENSE
 [product-screenshot]: https://tos.odex.be/images/logo.svg
