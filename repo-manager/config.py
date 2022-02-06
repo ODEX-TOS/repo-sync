@@ -32,3 +32,7 @@ DATA_STORAGE="/var/cache/tos-repo/persist.json"
 
 ARCH="x86_64"
 COMPRESSION="zst"
+
+ORG="ODEX-TOS"
+REPO="repo-sync"
+GITHUB_REPO='https://github.com/{}/{}'.format(ORG, REPO)

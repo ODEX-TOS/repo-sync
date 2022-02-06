@@ -39,7 +39,7 @@ class Deploy(Runner):
         subparser.add_argument('--type','-t', help='The type of deployment', choices=["docker", "host"], default=DEPLOY_TYPE)
         subparser.add_argument('--path','-p', help='Where on the host to store the repo', type=str, default=DEPLOY_PATH)
         subparser.add_argument('--backend','-b', help='The type of software to use to host the repository', choices=["nginx", "traefik"], default=DEPLOY_BACKEND)
-        subparser.add_argument('--domain','-d', help='The domain to use to generate a TLS certificate for', type=str, default=DEPLOY_DOMAIN)
+        subparser.add_argument('--domain','-d', help='The domain that will host this repo', type=str, default=DEPLOY_DOMAIN)
         subparser.add_argument('--external-traefik','-e', help='The docker network name in case traefik is selected', type=str)
         subparser.add_argument('--ring','-r', help='The ring level to use', type=int, default=RING_LEVEL)
 
@@ -63,6 +63,10 @@ class Deploy(Runner):
             error("{} is not a valid ring level".format(namespace.ring))
             error("Choose one of the following: {} ring levels".format(VALID_RING_LEVELS))
             exit(1)
+
+        if namespace.domain == DEPLOY_DOMAIN:
+          error("Please specify a valid domain that will host this repo using the --domain option")
+          exit(1)
 
         if namespace.type == "host":
             self.__host(namespace)

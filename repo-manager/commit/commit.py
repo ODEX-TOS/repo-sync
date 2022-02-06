@@ -22,10 +22,56 @@
 
 import argparse
 from ..base import Runner
+from ..persist import Persist, load
+from ..log import *
+from ..config import *
+import urllib
+import urllib.request
+import json
+import base64
+from getpass import getpass
 
 
 class Commit(Runner):
     name = "commit"
 
+    def __init__(self):
+        self.persist: Persist = load()
+
     def arg(self, parser: argparse.ArgumentParser) -> None:
         subparser = parser.add_parser("commit")
+
+
+    def send_api_request(self, title, body, username, password) -> None:
+        url = 'https://api.github.com/repos/{}/{}/issues'.format(ORG, REPO)
+        data = {'title': title, body: 'body', 'labels': ["ring"]}
+        login = base64.b64encode('{}:{}'.format(username, password).encode('utf-8'))
+
+        jsondata = json.dumps(data).encode('utf-8')
+
+        req = urllib.request.Request(url, data=jsondata)
+        req.add_header('Accept', 'application/vnd.github.v3+json')
+        req.add_header("Authorization", "Basic {}".format(login))   
+
+        print(url)
+
+        response = urllib.request.urlopen(req)
+
+        print(response)
+
+    def run_command(self, namespace: argparse.Namespace) -> None:
+        info("Creating issue in {}".format(GITHUB_REPO))
+
+        title = "Add ring level {} server for domain {}".format(self.persist.ring, self.persist.domain)
+        description = "Verify that my server '{}' contains all requirements for the ring {}\nThus adding it as an official mirror".format(self.persist.domain, self.persist.ring)
+
+        info("Title: {}".format(title))
+        info("Description: {}".format(description))
+        
+
+        print('Please give your github credentials so we can create the issue')
+        print("Username: ", end="")
+        username = input()
+        password = getpass()
+
+        self.send_api_request(title, description, username, password)
