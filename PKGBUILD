@@ -1,6 +1,6 @@
 # Maintainer: Tom Meyers tom@odex.be
 pkgname=repo-manager
-pkgver=r2.5ed89d2
+pkgver=r3.5f4a434
 pkgrel=1
 pkgdesc="Build system to easily integrate tos functionality on your system"
 arch=(any)

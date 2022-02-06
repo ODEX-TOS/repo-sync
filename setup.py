@@ -31,11 +31,11 @@ setup(name='repo-manager',
       author_email='tom@odex.be',
       url='https://github.com/ODEX-TOS/repo-sync',
       packages=[
-          'repo-manager'
-          'repo-manager.commit'
-          'repo-manager.deploy'
-          'repo-manager.info'
-          'repo-manager.sync'
+          'repo-manager',
+          'repo-manager.commit',
+          'repo-manager.deploy',
+          'repo-manager.info',
+          'repo-manager.sync',
           'repo-manager.systemctl'
           ]
      )
